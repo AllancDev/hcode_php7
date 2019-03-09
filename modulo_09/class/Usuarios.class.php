@@ -6,6 +6,12 @@
         private $dessenha;
         private $dtcadastro;
 
+
+        public function __construct($login = "", $password = "") {
+            $this -> setDesLogin($login);
+            $this -> setDesSenha($password);
+        }
+
         public function setIdUsuario($idusuario) {
             $this -> idusuario = $idusuario;
         }
@@ -45,12 +51,8 @@
             ));
 
             if(count($results) > 0) {
-                $row = $results[0];
+                $this -> setData($results[0]);
 
-                $this -> setIdUsuario($row['idusuario']);
-                $this -> setDeslogin($row['deslogin']);
-                $this -> setDesSenha($row['dessenha']);
-                $this -> setDtCadastro(new DateTime($row['dtcadastro']));
             }
         }
 
@@ -77,14 +79,45 @@
             ));
 
             if(count($results) > 0) {
-                $row = $results[0]; 
-                $this -> setIdUsuario($row['idusuario']);
-                $this -> setDesLogin($row['deslogin']);
-                $this -> setDesSenha($row['dessenha']);
-                $this -> setDtCadastro(new DateTime($row['dtcadastro']));
+
+                $this -> setData($results[0]);
+
             }  else {
                 throw new Exception("Login e/ou senha inválidos.");
             }
+        }
+
+        public function setData($data) {
+            $this -> setIdUsuario($data['idusuario']);
+            $this -> setDesLogin($data['deslogin']);
+            $this -> setDesSenha($data['dessenha']);
+            $this -> setDtCadastro(new DateTime($data['dtcadastro']));
+        }
+
+
+        public function insert() {
+            $sql = new Sql();
+            $results = $sql -> select("CALL sp_usuarios_insert(:login, :password)", array(
+                ":login" => $this -> getDeslogin(),
+                ":password" => $this -> getDesSenha()
+            ));
+
+            if(count($results) > 0) {
+                $this -> setData($results[0]);
+            }
+        }
+
+
+        public function update($login, $password) {
+            $this -> setDesLogin($login);
+            $this -> setDesSenha($password);
+
+            $sql = new Sql();
+            $sql -> query("UPDATE tb_usuarios SET deslogin = :login, dessenha = :password WHERE idusuario = :id", array(
+                ":login" => $this -> getDesLogin(),
+                ":password" => $this -> getDesSenha(),
+                ":id" => $this -> getIdUsuario()
+            ));
         }
 
 

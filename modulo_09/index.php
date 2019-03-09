@@ -16,8 +16,17 @@
 
 
     // Carrega um usuario carregando o login e a senha
-        $Usuario = new Usuarios();
-        $Usuario -> login("user", "e10adc3949ba59abbe56e057f20f883e");
-        echo $Usuario;
+        // $Usuario = new Usuarios();
+        // $Usuario -> login("user", "e10adc3949ba59abbe56e057f20f883e");
+        // echo $Usuario;
+
+
+    $aluno = new Usuarios();
+    $aluno -> setDeslogin("YoUOn");
+    $aluno -> setDesSenha("YOnSia");
+
+    $aluno -> insert();
+
+    echo $aluno;
 
 ?>
