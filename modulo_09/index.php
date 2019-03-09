@@ -31,9 +31,15 @@
 
 
     // Realizando Update de dados
-        $usuario = new Usuarios();
-        $usuario -> loadById(8);
-        $usuario -> update("professor", "@ndcn");
-        echo $usuario;
+        // $usuario = new Usuarios();
+        // $usuario -> loadById(8);
+        // $usuario -> update("professor", "@ndcn");
+        // echo $usuario;
 
+
+    // Realizando delete de dados
+        $userdelete = new Usuarios();
+        $userdelete -> loadById(3);
+        $userdelete -> delete();
+        echo $userdelete;
 ?>
