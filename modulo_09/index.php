@@ -20,13 +20,20 @@
         // $Usuario -> login("user", "e10adc3949ba59abbe56e057f20f883e");
         // echo $Usuario;
 
+    // Insert Criando um novo usuario
+        // $aluno = new Usuarios();
+        // $aluno -> setDeslogin("YoUOn");
+        // $aluno -> setDesSenha("YOnSia");
 
-    $aluno = new Usuarios();
-    $aluno -> setDeslogin("YoUOn");
-    $aluno -> setDesSenha("YOnSia");
+        // $aluno -> insert();
 
-    $aluno -> insert();
+        // echo $aluno;
 
-    echo $aluno;
+
+    // Realizando Update de dados
+        $usuario = new Usuarios();
+        $usuario -> loadById(8);
+        $usuario -> update("professor", "@ndcn");
+        echo $usuario;
 
 ?>
