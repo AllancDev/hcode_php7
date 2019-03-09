@@ -9,11 +9,11 @@
 
         private function setParams($statement, $parameters = array() ) {
             foreach($parameters as $key => $value) {
-                $this -> setParam($key, $value);
+                $this -> setParam($statement, $key, $value);
             }
         }
 
-        private function setParam($statement = null, $key, $value) {
+        private function setParam($statement, $key, $value) {
             $statement -> bindParam($key, $value);
         }
 
