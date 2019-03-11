@@ -2,13 +2,12 @@
     require_once("./vendor/autoload.php");
 
     $app = new \Slim\Slim();
+    use \nexti\Page;
     $app -> config('debug', true);
     $app -> get("/", function(){
-
-        $sql = new \nexti\db\Conn();
-
-        $results = $sql -> select("SELECT * FROM tb_users");
-        echo json_encode($results);
+        $page = new Page();
+        $page -> setTpl("index");
+        //echo $_SERVER["DOCUMENT_ROOT"] . "/_courses/hcode_php_7/projeto_final/views/";
     });
 
     $app -> run();
