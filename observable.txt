@@ -8,3 +8,10 @@ VERSÕES DO SISTEMA
     beta
     rc -> release candidate
     stable
+
+
+// Aula de segurança
+
+Command Injection -> Rodando um sistema tipo wordpress utilizar o php para fazer injeção de commandos
+
+Defense in depth -> Defesa em camadas
