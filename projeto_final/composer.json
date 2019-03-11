@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\nexti\\php-classes\\src"
+            "nexti\\": "vendor\\nexti\\php-classes\\src"
         }
     }
 }

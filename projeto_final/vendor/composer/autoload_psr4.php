@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'nexti\\' => array($vendorDir . '/nexti/php-classes/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
-    '' => array($vendorDir . '/nexti/php-classes/src'),
 );
