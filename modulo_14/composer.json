@@ -1,0 +1,16 @@
+{
+    "name": "selftech/composer",
+    "description": "Projeto do curso da hcode php7",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Allan Camargo",
+            "email": "allan.cdev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog" : "1.0.*"
+    }
+}

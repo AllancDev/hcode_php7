@@ -1,0 +1,10 @@
+VERSÕES DO SISTEMA 
+    dev 
+
+
+// Produção
+    dev
+    alpha
+    beta
+    rc -> release candidate
+    stable
